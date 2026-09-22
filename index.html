@@ -1,0 +1,650 @@
+`html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Butterfly — Stellar Digital Assets</title>
+
+<meta name="description"
+content="Butterfly — A three-token digital asset project built on the Stellar network.">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    color:#fff;
+    background:
+        radial-gradient(circle at 20% 20%,#35158f 0%,transparent 35%),
+        radial-gradient(circle at 80% 10%,#073c91 0%,transparent 35%),
+        linear-gradient(135deg,#05051b,#08052b,#061d45);
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND GLOW */
+
+body:before,
+body:after{
+    content:"";
+    position:fixed;
+    width:450px;
+    height:450px;
+    border-radius:50%;
+    filter:blur(120px);
+    opacity:.35;
+    z-index:-2;
+}
+
+body:before{
+    background:#7b2cff;
+    left:-180px;
+    top:25%;
+}
+
+body:after{
+    background:#008cff;
+    right:-180px;
+    bottom:10%;
+}
+
+/* MOVING BUTTERFLIES */
+
+.butterfly{
+    position:fixed;
+    z-index:-1;
+    font-size:30px;
+    opacity:.18;
+    filter:drop-shadow(0 0 15px #8e6cff);
+    animation:fly linear infinite;
+    pointer-events:none;
+}
+
+.b1{left:5%;top:80%;animation-duration:18s;}
+.b2{left:25%;top:90%;animation-duration:23s;font-size:22px;}
+.b3{left:55%;top:75%;animation-duration:20s;font-size:35px;}
+.b4{left:80%;top:85%;animation-duration:26s;font-size:25px;}
+.b5{left:90%;top:45%;animation-duration:17s;}
+
+@keyframes fly{
+    0%{
+        transform:translate(0,0) rotate(0deg);
+    }
+    25%{
+        transform:translate(120px,-180px) rotate(15deg);
+    }
+    50%{
+        transform:translate(-100px,-360px) rotate(-15deg);
+    }
+    75%{
+        transform:translate(180px,-520px) rotate(20deg);
+    }
+    100%{
+        transform:translate(-50px,-800px) rotate(-10deg);
+    }
+}
+
+/* HEADER */
+
+header{
+    width:100%;
+    padding:22px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:relative;
+    z-index:5;
+    backdrop-filter:blur(15px);
+    background:rgba(4,4,25,.35);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+    font-size:27px;
+    font-weight:800;
+    letter-spacing:2px;
+    background:linear-gradient(90deg,#a66cff,#55c9ff);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.nav-btn{
+    padding:10px 18px;
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:30px;
+    color:white;
+    text-decoration:none;
+    background:rgba(255,255,255,.06);
+}
+
+/* HERO */
+
+.hero{
+    min-height:720px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:90px 20px;
+}
+
+.hero-content{
+    max-width:950px;
+}
+
+.badge{
+    display:inline-block;
+    padding:9px 18px;
+    border-radius:30px;
+    background:rgba(119,71,255,.14);
+    border:1px solid rgba(150,120,255,.35);
+    color:#bba7ff;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:clamp(60px,10vw,120px);
+    line-height:.9;
+    letter-spacing:-5px;
+    background:linear-gradient(90deg,#ffffff,#a77aff,#55cfff);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero p{
+    max-width:700px;
+    margin:30px auto;
+    color:#bfc7e8;
+    font-size:18px;
+    line-height:1.8;
+}
+
+.hero-button{
+    display:inline-block;
+    padding:15px 28px;
+    border-radius:35px;
+    color:white;
+    text-decoration:none;
+    background:linear-gradient(90deg,#703cff,#087eff);
+    box-shadow:0 0 35px rgba(75,80,255,.35);
+    transition:.3s;
+}
+
+.hero-button:hover{
+    transform:translateY(-4px);
+    box-shadow:0 0 50px rgba(80,130,255,.65);
+}
+
+/* SECTIONS */
+
+section{
+    padding:90px 7%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.section-title p{
+    color:#9fa8cc;
+}
+
+/* TOKEN CARDS */
+
+.tokens{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.card{
+    position:relative;
+    padding:35px 25px;
+    border-radius:28px;
+    background:linear-gradient(
+        145deg,
+        rgba(255,255,255,.10),
+        rgba(255,255,255,.035)
+    );
+    border:1px solid rgba(255,255,255,.12);
+    backdrop-filter:blur(20px);
+    overflow:hidden;
+    transition:.35s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    border-color:rgba(130,110,255,.6);
+    box-shadow:0 20px 60px rgba(45,70,255,.22);
+}
+
+.card:before{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    background:#693bff;
+    filter:blur(80px);
+    opacity:.25;
+    top:-80px;
+    right:-60px;
+}
+
+.token-icon{
+    font-size:55px;
+    margin-bottom:20px;
+    filter:drop-shadow(0 0 15px #8d6cff);
+}
+
+.card h3{
+    font-size:28px;
+    margin-bottom:12px;
+}
+
+.card p{
+    color:#aeb7d8;
+    line-height:1.7;
+    min-height:80px;
+}
+
+.token-button{
+    display:block;
+    margin-top:25px;
+    padding:13px;
+    text-align:center;
+    border-radius:15px;
+    color:white;
+    text-decoration:none;
+    background:linear-gradient(90deg,#6338ed,#087ce8);
+}
+
+/* INFO */
+
+.info{
+    max-width:1050px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.info-box{
+    padding:30px;
+    border-radius:25px;
+    background:rgba(255,255,255,.055);
+    border:1px solid rgba(255,255,255,.1);
+    backdrop-filter:blur(18px);
+}
+
+.info-box h3{
+    margin-bottom:15px;
+}
+
+.info-box p{
+    color:#aeb7d8;
+    line-height:1.8;
+}
+
+.address{
+    word-break:break-all;
+    color:#8bcfff;
+    font-size:13px;
+}
+
+/* PRICE */
+
+.price-box{
+    max-width:800px;
+    margin:auto;
+    text-align:center;
+    padding:45px;
+    border-radius:30px;
+    background:linear-gradient(
+        145deg,
+        rgba(69,43,170,.2),
+        rgba(0,130,255,.12)
+    );
+    border:1px solid rgba(150,150,255,.18);
+}
+
+.price-label{
+    color:#aeb7d8;
+    margin-bottom:10px;
+}
+
+#xlmPrice{
+    font-size:55px;
+    font-weight:800;
+    background:linear-gradient(90deg,#a777ff,#55cfff);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+#priceStatus{
+    margin-top:12px;
+    color:#8290b8;
+}
+
+/* FOOTER */
+
+footer{
+    padding:45px 20px;
+    text-align:center;
+    color:#717b9d;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+.footer-brand{
+    color:#a67cff;
+    font-weight:bold;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+    .tokens{
+        grid-template-columns:1fr;
+    }
+
+    .info{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        min-height:650px;
+    }
+
+    .hero h1{
+        letter-spacing:-3px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="butterfly b1">🦋</div>
+<div class="butterfly b2">🦋</div>
+<div class="butterfly b3">🦋</div>
+<div class="butterfly b4">🦋</div>
+<div class="butterfly b5">🦋</div>
+
+<header>
+    <div class="logo">🦋 BUTTERFLY</div>
+    <a class="nav-btn" href="#tokens">Explore</a>
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="badge">BUILT ON STELLAR NETWORK</div>
+
+<h1>Butterfly</h1>
+
+<p>
+A new digital asset project introducing three independent tokens
+on the Stellar network — Bi12L, Bi13L and Bi14L.
+</p>
+
+<a href="#tokens" class="hero-button">
+Explore the Tokens
+</a>
+
+</div>
+
+</section>
+
+<section id="tokens">
+
+<div class="section-title">
+<h2>Three Wings. One Ecosystem.</h2>
+<p>Explore the three Butterfly assets.</p>
+</div>
+
+<div class="tokens">
+
+<div class="card">
+
+<div class="token-icon">🦋</div>
+
+<h3>Bi12L</h3>
+
+<p>
+The first Butterfly asset, introduced during the initial
+launch phase of the ecosystem.
+</p>
+
+<a
+class="token-button"
+href="https://stellar.expert/explorer/public/asset/Bi12L-GAP2IR4OHUGOSJ24PE7L4YNMH6UJ6GUYV2XYAWYDYWNXBRQ2SOSY3FDL"
+target="_blank">
+Open Bi12L
+</a>
+
+</div>
+
+<div class="card">
+
+<div class="token-icon">🦋</div>
+
+<h3>Bi13L</h3>
+
+<p>
+The second Butterfly asset, created as part of the
+three-token ecosystem.
+</p>
+
+<a
+class="token-button"
+href="https://stellar.expert/explorer/public/asset/Bi13L-GAP2IR4OHUGOSJ24PE7L4YNMH6UJ6GUYV2XYAWYDYWNXBRQ2SOSY3FDL"
+target="_blank">
+Open Bi13L
+</a>
+
+</div>
+
+<div class="card">
+
+<div class="token-icon">🦋</div>
+
+<h3>Bi14L</h3>
+
+<p>
+The third Butterfly asset, completing the initial
+three-token structure.
+</p>
+
+<a
+class="token-button"
+href="https://stellar.expert/explorer/public/asset/Bi14L-GAP2IR4OHUGOSJ24PE7L4YNMH6UJ6GUYV2XYAWYDYWNXBRQ2SOSY3FDL"
+target="_blank">
+Open Bi14L
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="section-title">
+<h2>Launch Strategy</h2>
+<p>A transparent introduction to the Butterfly ecosystem.</p>
+</div>
+
+<div class="info">
+
+<div class="info-box">
+
+<h3>Initial Launch</h3>
+
+<p>
+Butterfly begins with an initial token offering designed to
+introduce the three assets to the Stellar ecosystem.
+As market activity develops, prices can change through
+actual market trading and available liquidity.
+</p>
+
+</div>
+
+<div class="info-box">
+
+<h3>Market Growth</h3>
+
+<p>
+Increased demand and trading activity can affect market price.
+However, market growth does not guarantee profit. Token prices
+are determined by market conditions, liquidity and transactions.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="section-title">
+<h2>Live Stellar Market</h2>
+<p>Current XLM reference price</p>
+</div>
+
+<div class="price-box">
+
+<div class="price-label">XLM / USD</div>
+
+<div id="xlmPrice">Loading...</div>
+
+<div id="priceStatus">
+Fetching live market data...
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="section-title">
+<h2>Project Issuer</h2>
+<p>All three Butterfly assets share the same issuer.</p>
+</div>
+
+<div class="info">
+
+<div class="info-box">
+
+<h3>Stellar Issuer</h3>
+
+<p class="address">
+GAP2IR4OHUGOSJ24PE7L4YNMH6UJ6GUYV2XYAWYDYWNXBRQ2SOSY3FDL
+</p>
+
+</div>
+
+<div class="info-box">
+
+<h3>Network</h3>
+
+<p>
+Stellar Mainnet
+<br>
+Three assets · One issuer · Butterfly ecosystem
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="footer-brand">🦋 BUTTERFLY</div>
+
+<p>
+Built on Stellar • Bi12L • Bi13L • Bi14L
+</p>
+
+</footer>
+
+<script>
+
+/*
+    Live XLM price
+    Uses CoinGecko public endpoint.
+*/
+
+async function loadXLM(){
+
+    const price = document.getElementById("xlmPrice");
+    const status = document.getElementById("priceStatus");
+
+    try{
+
+        const response = await fetch(
+            "https://api.coingecko.com/api/v3/simple/price?ids=stellar&vs_currencies=usd"
+        );
+
+        if(!response.ok){
+            throw new Error("Price unavailable");
+        }
+
+        const data = await response.json();
+
+        const value = data.stellar.usd;
+
+        price.textContent =
+            "$" + Number(value).toLocaleString(
+                "en-US",
+                {
+                    minimumFractionDigits:4,
+                    maximumFractionDigits:6
+                }
+            );
+
+        status.textContent =
+            "Live reference price • Updated automatically";
+
+    }catch(error){
+
+        price.textContent = "Unavailable";
+
+        status.textContent =
+            "Market data is temporarily unavailable.";
+
+    }
+}
+
+loadXLM();
+
+setInterval(loadXLM,60000);
+
+</script>
+
+</body>
+</html>
+`

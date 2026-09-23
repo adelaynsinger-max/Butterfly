@@ -1,7 +1,7 @@
 VERSION = "2.0.0"
 
 ACCOUNTS = [
-  "ISSUER_ADDRESS"
+  "GAP2IR4OHUGOSJ24PE7L4YNMH6UJ6GUYV2XYAWYDYWNXBRQ2SOSY3FDL"
 ]
 
 [DOCUMENTATION]
@@ -10,21 +10,21 @@ ORG_URL = "https://adelaynsinger-max.github.io/Butterfly/"
 
 [[CURRENCIES]]
 code = "Bi12L"
-issuer = "ISSUER_ADDRESS"
+issuer = "GAP2IR4OHUGOSJ24PE7L4YNMH6UJ6GUYV2XYAWYDYWNXBRQ2SOSY3FDL"
 name = "Bi12L"
-desc = "Bi12L — the first Butterfly token, inspired by the blue butterfly and the power of transformation."
-image = "https://adelaynsinger-max.github.io/Butterfly/Bi12L.png"
+desc = "Bi12L — Butterfly project token."
+image = "https://adelaynsinger-max.github.io/Butterfly/file_00000000d4a881fdb41437a2a2f86da1.png"
 
 [[CURRENCIES]]
 code = "Bi13L"
-issuer = "ISSUER_ADDRESS"
+issuer = "GAP2IR4OHUGOSJ24PE7L4YNMH6UJ6GUYV2XYAWYDYWNXBRQ2SOSY3FDL"
 name = "Bi13L"
-desc = "Bi13L — a blue butterfly token representing beauty, movement and a new beginning."
-image = "https://adelaynsinger-max.github.io/Butterfly/Bi13L.png"
+desc = "Bi13L — Butterfly project token."
+image = "https://adelaynsinger-max.github.io/Butterfly/file_00000000de888230bf48e45d866f4cce.png"
 
 [[CURRENCIES]]
 code = "Bi14L"
-issuer = "ISSUER_ADDRESS"
+issuer = "GAP2IR4OHUGOSJ24PE7L4YNMH6UJ6GUYV2XYAWYDYWNXBRQ2SOSY3FDL"
 name = "Bi14L"
-desc = "Bi14L — a deep blue Butterfly token representing evolution, freedom and strength."
-image = "https://adelaynsinger-max.github.io/Butterfly/Bi14L.png"
+desc = "Bi14L — Butterfly project token."
+image = "https://adelaynsinger-max.github.io/Butterfly/file_00000000961c81fd9f6a9c33ccd67ef0.png"

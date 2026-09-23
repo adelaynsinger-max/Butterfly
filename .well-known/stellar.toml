@@ -1,0 +1,30 @@
+VERSION = "2.0.0"
+
+ACCOUNTS = [
+  "ISSUER_ADDRESS"
+]
+
+[DOCUMENTATION]
+ORG_NAME = "Butterfly"
+ORG_URL = "https://adelaynsinger-max.github.io/Butterfly/"
+
+[[CURRENCIES]]
+code = "Bi12L"
+issuer = "ISSUER_ADDRESS"
+name = "Bi12L"
+desc = "Bi12L — the first Butterfly token, inspired by the blue butterfly and the power of transformation."
+image = "https://adelaynsinger-max.github.io/Butterfly/Bi12L.png"
+
+[[CURRENCIES]]
+code = "Bi13L"
+issuer = "ISSUER_ADDRESS"
+name = "Bi13L"
+desc = "Bi13L — a blue butterfly token representing beauty, movement and a new beginning."
+image = "https://adelaynsinger-max.github.io/Butterfly/Bi13L.png"
+
+[[CURRENCIES]]
+code = "Bi14L"
+issuer = "ISSUER_ADDRESS"
+name = "Bi14L"
+desc = "Bi14L — a deep blue Butterfly token representing evolution, freedom and strength."
+image = "https://adelaynsinger-max.github.io/Butterfly/Bi14L.png"
